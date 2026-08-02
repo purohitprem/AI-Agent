@@ -10,7 +10,7 @@ if not GEMINI_API_KEY:
     raise ValueError("GEMINI API KEY NOT FOUND!!")
 
 llm = LLM(
-    model='gemini/gemini-2.5-flash',
+    model='gemini/gemini-3.5-flash',
     api_key=GEMINI_API_KEY,
     temperature=0.3
 )
@@ -54,3 +54,19 @@ product_description_task = Task(
             ),
     agent=product_description_agent
 )
+
+
+team = Crew(
+    agents=[product_description_agent],
+    tasks=[product_description_task],
+    process=Process.sequential 
+)
+
+result = team.kickoff(inputs={
+    'product_name':"Hammer Airflow Neo Earbuds ",
+    'product_category':"Small Earbuds",
+    'target_customer':"Retail store and shop owner",
+    'main_features':"40ms Gaming Mode,Voice Assistant,Type-C Charging,40ms Gaming Mode,13mm Titanium Driver"
+})
+
+print(result.raw)
