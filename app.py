@@ -31,7 +31,6 @@ product_description_agent = Agent(
     allow_delegation=False
 )
 
-
 product_description_task = Task(
     description=(
             "Analyze the product provided below:\n\n"
@@ -42,7 +41,6 @@ product_description_task = Task(
             "Use only the information provided about the product."
             "Do not invent missing specifications or make unsupported claims."
             ),
-
 
     expected_output=(
             "Generate a product report in Markdown format with the following sections:\n"
