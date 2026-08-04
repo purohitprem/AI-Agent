@@ -68,5 +68,3 @@ result = team.kickoff(inputs={
     'target_customer':"Retail store and shop owner",
     'main_features':"40ms Gaming Mode,Voice Assistant,Type-C Charging,40ms Gaming Mode,13mm Titanium Driver"
 })
-
-print(result.raw)
