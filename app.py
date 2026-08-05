@@ -68,5 +68,4 @@ result = team.kickoff(inputs={
     'main_features':"40ms Gaming Mode,Voice Assistant,Type-C Charging,40ms Gaming Mode,13mm Titanium Driver"
 })
 
-
 print(result.raw)
