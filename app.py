@@ -7,7 +7,7 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not GEMINI_API_KEY:
-    raise ValueError("GEMINI API KEY NOT FOUND!!")
+    raise ValueError("GEMINI API KEY NOT FOUND!!!")
 
 llm = LLM(
     model='gemini/gemini-3.5-flash',
@@ -60,6 +60,8 @@ team = Crew(
     tasks=[product_description_task],
     process=Process.sequential 
 )
+
+
 
 result = team.kickoff(inputs={
     'product_name':"Hammer Airflow Neo Earbuds ",
