@@ -10,7 +10,7 @@ if not GEMINI_API_KEY:
     raise ValueError("GEMINI API KEY IS NOT FOUND!!")
 
 llm = LLM(
-    model='gemini/gemini-4.5-flash',
+    model='gemini/gemini-3.5-flash',
     api_key=GEMINI_API_KEY,
     temperature=0.4
 )
