@@ -12,7 +12,7 @@ if not GEMINI_API_KEY:
 llm = LLM(
     model='gemini/gemini-3.5-flash',
     api_key=GEMINI_API_KEY,
-    temperature=0.4
+    temperature=0.3
 )
 
 product_description_agent = Agent(
