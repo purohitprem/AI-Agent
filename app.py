@@ -14,7 +14,6 @@ llm = LLM(
     api_key=GEMINI_API_KEY,
     temperature=0.3
 )
-
 product_description_agent = Agent(
     role= "Product Description Specialist",
     goal=(
@@ -30,7 +29,6 @@ product_description_agent = Agent(
     verbose=False,
     allow_delegation=False
 )
-
 product_description_task = Task(
     description=(
             "Analyze the product provided below:\n\n"
@@ -41,7 +39,6 @@ product_description_task = Task(
             "Use only the information provided about the product."
             "Do not invent missing specifications or make unsupported claims."
             ),
-
     expected_output=(
             "Generate a product report in Markdown format with the following sections:\n"
             "1. Product Title\n"
