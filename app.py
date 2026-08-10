@@ -14,6 +14,7 @@ llm = LLM(
     api_key=GEMINI_API_KEY,
     temperature=0.3
 )
+
 product_description_agent = Agent(
     role= "Product Description Specialist",
     goal=(
@@ -29,6 +30,7 @@ product_description_agent = Agent(
     verbose=False,
     allow_delegation=False
 )
+
 product_description_task = Task(
     description=(
             "Analyze the product provided below:\n\n"
