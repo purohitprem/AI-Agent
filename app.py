@@ -52,16 +52,18 @@ product_description_task = Task(
     agent=product_description_agent
 )
 
+
 team = Crew(
     agents=[product_description_agent],
     tasks=[product_description_task],
     process=Process.sequential 
 )
 
+
 result = team.kickoff(inputs={
     'product_name':"Hammer Airflow Neo Earbuds ",
-    'product_category':"Small Earbuds",
-    'target_customer':"Retail store and shop owner",
+    'product_category':"Small Earbuds ",
+    'target_customer':"Retail store and shop owner ",
     'main_features':"40ms Gaming Mode,Voice Assistant,Type-C Charging,40ms Gaming Mode,13mm Titanium Driver"
 })
 
