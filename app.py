@@ -2,7 +2,9 @@ from dotenv import load_dotenv
 import os
 from crewai import LLM,Agent,Task,Crew,Process
 
+
 load_dotenv()
+
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -12,7 +14,7 @@ if not GEMINI_API_KEY:
 llm = LLM(
     model='gemini/gemini-2.5-flash',
     api_key=GEMINI_API_KEY,
-    temperature=0.3
+    temperature=0.4
 )
 
 product_description_agent = Agent(
@@ -26,6 +28,7 @@ product_description_agent = Agent(
         "You convert simple product details into clear  product descriptions."
         "You never invent technical specifications that are not provided"
         ),
+        
     llm=llm,
     verbose=False,
     allow_delegation=False
