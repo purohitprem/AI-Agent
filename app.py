@@ -12,9 +12,8 @@ if not GEMINI_API_KEY:
 llm = LLM(
     model='gemini/gemini-2.5-flash',
     api_key=GEMINI_API_KEY,
-    temperature=0.6
+    temperature=0.3
 )
-
 
 product_description_agent = Agent(
     role= "Product Description Specialist",
@@ -22,7 +21,6 @@ product_description_agent = Agent(
             "Given product information ko understand karke clear, useful"
             "aur customer-friendly product description create karna."
         ),
-        
     backstory=(
         "You are an experienced ecomprce content specialist."
         "You convert simple product details into clear  product descriptions."
