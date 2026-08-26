@@ -15,6 +15,8 @@ llm = LLM(
     temperature=0.3
 )
 
+
+
 product_description_agent = Agent(
     role= "Product Description Specialist",
     goal=(
@@ -22,7 +24,7 @@ product_description_agent = Agent(
             "aur customer-friendly product description create karna."
         ),
     backstory=(
-        "You are an experienced ecomprce content specialist. "
+        "You are an experienced ecomprce content specialist."
         "You convert simple product details into clear  product descriptions."
         "You never invent technical specifications that are not provided"
         ),
@@ -53,7 +55,6 @@ product_description_task = Task(
             ),
     agent=product_description_agent
 )
-
 
 team = Crew(
     agents=[product_description_agent],
