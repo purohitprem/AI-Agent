@@ -14,21 +14,23 @@ llm = LLM(
     api_key=GEMINI_API_KEY,
     temperature=0.3
 )
+
 product_description_agent = Agent(
     role= "Product Description Specialist",
     goal=(
-            "Given product information ko understand karke clear, useful"
+            "Given product information ko understand karke clear, useful."
             "aur customer-friendly product description create karna."
         ),
     backstory=(
         "You are an experienced ecomprce content specialist."
         "You convert simple product details into clear  product descriptions."
-        "You never invent technical specifications that are not provided"
+        "You never invent technical specifications that are not provided."
         ),
     llm=llm,
     verbose=False,
     allow_delegation=False
 )
+
 product_description_task = Task(
     description=(
             "Analyze the product provided below:\n\n"
@@ -55,7 +57,7 @@ product_description_task = Task(
 team = Crew(
     agents=[product_description_agent],
     tasks=[product_description_task],
-    process=Process.sequential 
+    process=Process.hierarchical 
 )
 
 result = team.kickoff(inputs={
